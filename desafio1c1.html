@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo"></p>
+
+<p id="demo2"></p>
+
+<table  id="minhaTabela" border="1">
+  <tr>
+    <td>Nome</td>
+    <td>CPF</td>
+    <td>Logradouro</td>
+    <td>Numero</td>
+    <td>Bairro</td>
+    <td>Cidade</td>
+    <td>Estado</td>
+  </tr>
+</table>
+
+
+  <script>
+    var myObj, x;
+    myObj = {
+      "nome":["Ricardo","Maria","Jose","Helena","Sidneia","Joao","Carlos","Luciano","Suelen","Helen"],
+      "CPF":["11111111111","22222222222","33333333333","44444444444","55555555555","66666666666","77777777777","88888888888","99999999999","12332112312"],
+      "Logradouro":[ "Rua A","Rua B","Rua C","Rua D","Rua E","Rua F","Rua G","Rua H","Rua I","Rua J"],
+      "Numero":[ 1,2,3,4,5,6,7,8,9,10 ],
+      "Bairro":[ "Estados Unidos","Abadia","Fabricio","Merces","Guanabara","Frei Eugenio","Sao Benedito","Cassio Resende","Boa Vista","Maringa"],
+      "Cidade":[ "Uberaba","Uberaba","Uberaba","Uberaba","Uberaba","Uberaba","Uberaba","Uberaba","Uberaba","Uberaba"],
+      "Estado":[ "MG","MG","MG","MG","MG","MG","MG","MG","MG","MG" ],
+    };
+    var i;
+    i=parseInt(i);
+    i=0;
+    x = myObj.Bairro[i];
+    while(x!=null){
+      x = myObj.Bairro[i];
+      i++;
+    }
+    i=i-1;
+    var tabela = document.getElementById("minhaTabela");
+    var numOfRows = tabela.rows.length;
+    var numOfCols = tabela.rows[numOfRows-1].cells.length;
+    for(j=0;j<i;j++){
+      tabela = document.getElementById("minhaTabela");
+      var numeroLinhas = tabela.rows.length;
+      var linha = tabela.insertRow(numeroLinhas);
+      var celula1 = linha.insertCell(0);
+      var celula2 = linha.insertCell(1);   
+      var celula3 = linha.insertCell(2); 
+      var celula4 = linha.insertCell(3);
+      var celula5 = linha.insertCell(4);   
+      var celula6 = linha.insertCell(5); 
+      var celula7 = linha.insertCell(6); 
+      celula1.innerHTML =  myObj.nome[j]; 
+      celula2.innerHTML =  myObj.CPF[j];
+      celula3.innerHTML =  myObj.Logradouro[j];
+      celula4.innerHTML =  myObj.Numero[j]; 
+      celula5.innerHTML =  myObj.Bairro[j];
+      celula6.innerHTML =  myObj.Cidade[j];
+      celula7.innerHTML =  myObj.Estado[j];
+    }
+  </script>
+
+</body>
+</html>
